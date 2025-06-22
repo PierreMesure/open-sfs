@@ -1,8 +1,8 @@
 import os
 import json
-from writer import write_json
-from rkrattsbaser import get_year, get_newer_items
-from utils import get_latest_update, sort
+from services.writer import write_json
+from services.rkrattsbaser import get_year, get_newer_items
+from services.utils import get_latest_update, sort
 
 RESET = False
 data = []
