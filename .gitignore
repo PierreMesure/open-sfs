@@ -3,3 +3,5 @@
 data/*.json
 /pdf/
 __pycache__
+build/
+*.egg-info/

@@ -4,13 +4,8 @@ import requests
 BETA_URL = "https://beta.rkrattsbaser.gov.se/elasticsearch/SearchEsByRawJson"
 
 
-def _post(payload_dict):
-    payload = json.dumps(payload_dict)
-    headers = {"Content-Type": "application/json"}
-
-    response = requests.request("POST", BETA_URL, headers=headers, data=payload).json()
-
-    return response["hits"]["hits"]
+def _post(payload):
+    return requests.request("POST", BETA_URL, json=payload).json()["hits"]["hits"]
 
 
 def get_law(id):

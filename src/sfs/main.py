@@ -4,13 +4,14 @@ from services.writer import write_json
 from services.rkrattsbaser import get_year, get_newer_items
 from services.utils import get_latest_update, sort
 
-RESET = False
+FIRST_YEARS = [1686, 1723, 1736, 1757, 1772, 1810, 1821]
+RESET = True
 data = []
 
 if RESET or not os.path.exists("data"):
     os.makedirs("data", exist_ok=True)
 
-    for i in range(1686, 2025 + 1):
+    for i in FIRST_YEARS + list(range(1827, 2025 + 1)):
         print(f"Fetching {i}...")
         year_data = get_year(i)
 
